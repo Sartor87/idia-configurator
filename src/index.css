@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-deep:    #0e0e14;
+  --bg-panel:   #14141e;
+  --bg-card:    #1a1a28;
+  --bg-hover:   #20202e;
+  --bg-input:   #12121c;
+
+  --gold:       #c8a96e;
+  --gold-dim:   #8b6914;
+  --gold-pale:  #f0e0bc;
+
+  --text-primary:   #e8e4dc;
+  --text-secondary: #9a9590;
+  --text-muted:     #5a5660;
+
+  --border:     rgba(200,169,110,0.15);
+  --border-mid: rgba(200,169,110,0.28);
+  --border-hi:  rgba(200,169,110,0.5);
+
+  --pass-bg:  rgba(40,130,60,0.15);  --pass-text:  #5dba70;
+  --warn-bg:  rgba(186,117,23,0.15); --warn-text:  #e0a830;
+  --fail-bg:  rgba(180,40,40,0.15);  --fail-text:  #e05555;
+  --info-bg:  rgba(56,138,221,0.12); --info-text:  #6ab0f0;
+
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  12px;
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+}
+
+html { font-size: 14px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* ── Form elements ── */
+input, select, textarea {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 7px 10px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus, select:focus { border-color: var(--border-hi); }
+select option { background: var(--bg-panel); }
+
+input[type="range"] {
+  padding: 0;
+  cursor: pointer;
+  accent-color: var(--gold);
+  height: 4px;
+  background: var(--border);
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+button:active { transform: scale(0.98); }
